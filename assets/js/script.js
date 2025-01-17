@@ -8,16 +8,16 @@ let DocumentTitle = document.querySelector('title');
 // musics and albem art file arrey list
 let musicFiles = [
     {
-        title: "Song 1",
+        title: "Hotline Bling",
         file: "assets/music/music1.mp3",
         albumArt: "assets/images/two.png"
     },
     {
-        title: "Song 2",
+        title: "Toosie Slide",
         file: "assets/music/music2.mp3",
         albumArt: "assets/images/tworappers.png"
     }, {
-        title: "Song 3",
+        title: "Wake up ",
         file: "assets/music/music3.mp3",
         albumArt: "assets/images/twowide.png"
     }
