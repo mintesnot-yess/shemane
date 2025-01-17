@@ -282,6 +282,114 @@ main {
     }
 }
 
+.play-list {
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+    background: var(--black-100);
+    border-radius: 10px;
+    max-width: 95%;
+    width: 400px;
+    height: 300px;
+    overflow: hidden auto;
+    padding: 10px 0;
+
+    z-index: 10;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            border-radius: 10px;
+
+            .play-button span {
+                font-size: 18px;
+                cursor: pointer;
+                color: var(--white-80);
+
+            }
+
+
+            .song-info {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .img {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    border-radius: 50px;
+                    width: 60px;
+                    height: 60px;
+                    overflow: hidden;
+
+                    .play-button {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background: #00000069;
+                        width: 100%;
+                        height: 100%;
+                        display: grid;
+                        place-content: center;
+
+                        i {
+                            font-size: 2rem;
+
+                        }
+
+                        &:hover {
+                            background: var(--black-opacity-90);
+                        }
+                    }
+                }
+            }
+
+            .album-art {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+
+            .title {
+                font-size: 16px;
+                font-weight: bold;
+                color: var(--white-80);
+            }
+
+            &:hover {
+                background: var(--black-opacity-90);
+
+
+            }
+
+        }
+
+
+    }
+}
+
+.play-list::-webkit-scrollbar {
+    display: none;
+
+}
+
+
+
+
+
+
 
 
 @media (max-width: 900px) {
