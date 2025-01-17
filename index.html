@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- add basic meta tags -->
+    <meta name="description" content="This is a description">
+    <meta name="keywords" content="Music, Music Albems, Arts">
+    <meta name="author" content="Mintesnot  Yesmashewa">
+    <title>Shemane</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <div class="container">
+        <aside>
+            <ul>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Blog</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
+            <div onclick="toggleSideNav()" class="close-nav">
+
+            </div>
+
+        </aside>
+
+        <main>
+            <article class="hero-page">
+                <section>
+                    <div class="header">
+                        <span onclick="toggleSideNav()" class="side-nav-toggle">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="music-play">
+                        <div class="buttons">
+                            <span onclick="playMusic()" class="MusicPlayDiv"> <i class="fa-solid fa-play"></i>
+                            </span>
+                            <span onclick="nextSong()" class="forward"><i class="fa-solid fa-forward"></i></span>
+                        </div>
+                        <!-- <div class="time">
+                            <span class="current-time">0:00</span>
+                            <span class="duration">0:00</span>
+                        </div> -->
+                    </div>
+                    <div class="footer"></div>
+                </section>
+
+                <section class="albem-art">
+                    <div class="text">
+                        <h1>SHEMANE</h1>
+                        <p class="music-title">Music Title</p>
+
+                    </div>
+                </section>
+
+                <section>
+                    <div class="header">
+
+                        <span>
+                            <i class="fa fa-user-circle"></i>
+                        </span>
+                    </div>
+
+                    <div class="date">
+                        <span>2025</span>
+                        <span>01</span>
+                        <span>01</span>
+                    </div>
+                    <div class="footer"></div>
+                </section>
+
+            </article>
+
+        </main>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
