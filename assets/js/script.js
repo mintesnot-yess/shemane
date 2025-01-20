@@ -166,3 +166,17 @@ function PlayListToggle() {
 PlayList.addEventListener('blur', () => {
     PlayList.style.display = 'none';
 });
+
+
+
+let Container = document.querySelector('.container')
+Container.style.scale = 1;
+
+function Vr() {
+    if (Container.style.scale == 1) {
+        Container.style.scale = .7;
+    } else {
+        Container.style.scale = 1;
+    }
+
+}

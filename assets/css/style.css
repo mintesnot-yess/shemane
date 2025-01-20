@@ -12,8 +12,6 @@
     --black-opacity-90: #0000002f;
     --white-100: #fff;
     --white-80: #b9b9b9;
-
-
 }
 
 html {
@@ -22,7 +20,6 @@ html {
 
 }
 
-
 body {
     font-family: "Open Sans", sans-serif;
     background: var(--black-100);
@@ -30,7 +27,6 @@ body {
 
 
 }
-
 
 .container {
     margin: auto;
@@ -48,6 +44,7 @@ aside {
     z-index: 10;
 
     ul {
+
         background: var(--black-100);
         display: flex;
         flex-direction: column;
@@ -67,10 +64,10 @@ aside {
                 text-transform: capitalize;
                 padding: 20px;
 
-
                 &:hover {
                     text-shadow: 0 0 50px;
                     color: var(--white-100);
+                    filter: brightness(2);
                 }
 
             }
@@ -140,11 +137,11 @@ main {
                 align-self: center;
                 flex-direction: column;
                 justify-content: center;
-                gap: 20px;
+                gap: 10px;
 
                 .buttons {
                     display: flex;
-                    gap: 20px;
+                    gap: 10px;
 
                     span {
                         width: 50px;
@@ -153,10 +150,14 @@ main {
                         display: grid;
                         place-content: center;
                         border-radius: 50%;
-                        font-size: 1.5rem;
                         color: var(--white-80);
                         cursor: pointer;
                         overflow: hidden;
+
+                        i {
+                            font-size: 1.2rem;
+
+                        }
 
                         &:hover {
                             i {
@@ -223,7 +224,7 @@ main {
 
                 p {
                     font: 550 3em / 1rem "Potta One", serif;
-                    text-shadow: 0 0 10px black;
+                    text-shadow: 0 0 10px var(--black-100);
 
 
                 }
@@ -261,19 +262,45 @@ main {
                 }
             }
 
+
             .date {
                 width: fit-content;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 align-self: center;
-
-                gap: 10px;
+                gap: 5px;
                 border-bottom: solid 1px;
 
 
                 span {
                     font: 550 1.2rem / 1.625rem "Open Sans", sans-serif;
+                }
+            }
+
+            .links {
+                display: flex;
+                gap: 5px;
+                flex-wrap: wrap;
+                justify-content: end;
+                align-items: center;
+
+
+                a {
+                    width: 50px;
+                    height: 50px;
+                    background: var(--black-90);
+                    display: grid;
+                    place-content: center;
+                    color: var(--white-80);
+                    font-size: 1.2rem;
+                    text-decoration: none;
+                    border-radius: 50%;
+
+                    &:hover {
+                        filter: brightness(2);
+                    }
+
                 }
             }
 
@@ -286,7 +313,8 @@ main {
     position: absolute;
     bottom: 80px;
     left: 10px;
-    background: var(--black-100);
+    background: var(--black-opacity-90);
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     max-width: 95%;
     width: 400px;
@@ -294,12 +322,13 @@ main {
     overflow: hidden auto;
     padding: 10px 0;
 
-    z-index: 10;
+    z-index: 50;
 
     ul {
         display: flex;
         flex-direction: column;
         gap: 0px;
+        flex: 1;
 
         li {
             display: flex;
@@ -336,19 +365,23 @@ main {
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                        background: #00000069;
+                        background: var(--black-opacity-90);
                         width: 100%;
                         height: 100%;
                         display: grid;
                         place-content: center;
 
                         i {
-                            font-size: 2rem;
+                            font-size: 1.3rem;
 
                         }
 
                         &:hover {
-                            background: var(--black-opacity-90);
+
+                            i {
+                                color: var(--white-100);
+                                scale: 1.2;
+                            }
                         }
                     }
                 }
@@ -384,13 +417,6 @@ main {
     display: none;
 
 }
-
-
-
-
-
-
-
 
 @media (max-width: 900px) {
 
@@ -479,8 +505,6 @@ main {
 
                     h1 {
                         font: 550 3.5rem / 1rem "Potta One", serif;
-
-
 
                     }
 
