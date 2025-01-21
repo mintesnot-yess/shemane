@@ -196,3 +196,10 @@ function AboutToggle() {
 
     }
 }
+
+// if url is index.html#about-section run AboutToggle()
+if (window.location.hash === '#about') {
+    AboutToggle();
+} else {
+    AboutContainer.style.display = "none";
+}
