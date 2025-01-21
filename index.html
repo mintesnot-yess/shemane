@@ -23,10 +23,10 @@
                     <a onclick="AboutToggle()" href="#about">About</a>
                 </li>
                 <li>
-                    <a href="">Blog</a>
+                    <a onclick="BlogToggle()" href="#blog">Blog</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="#">Contact</a>
                 </li>
             </ul>
             <div onclick="toggleSideNav()" class="close-nav">
@@ -96,6 +96,7 @@
                 </section>
 
             </article>
+
             <article class="about-container">
                 <div class="left">
                     <button onclick="AboutToggle()" class="close" title="close" name="close"> <i
@@ -118,11 +119,40 @@
                     </p>
 
                 </div>
-    </div>
-    </article>
+            </article>
+
+            <article class="blog-container">
+                <button onclick="BlogToggle()" class="close" title="close" name="close"> <i
+                        class="fa-solid fa-angle-left"></i> </button>
+                <div class="post">
+                    <div class="date">Jan 23</div>
+                    <div class="content">
+                        <a rel="noopener" target="_blank" href="https://www.youtube.com/shorts/frQFwfxpqBM">Lorem ipsum
+                            dolor sit amet
+                            consectetur adipisicing elit.</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="date">Feb 17</div>
+
+                    <div class="content">
+                        <a rel="noopener" target="_blank" href="https://www.youtube.com/watch?v=5nLY9otsV9M">Consectetur
+                            adipisicing
+                            elit Lorem ipsum dolor sit amet.</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="date">Oct 12</div>
+                    <div class="content">
+                        <a rel="noopener" target="_blank" href="https://www.youtube.com/shorts/jXmUbByMAyo">Adipisicing
+                            elit Lorem
+                            ipsum dolor sit amet</a>
+                    </div>
+                </div>
+            </article>
 
 
-    </main>
+        </main>
     </div>
 
     <script src="assets/js/script.js"></script>

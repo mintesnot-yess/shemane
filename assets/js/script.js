@@ -7,6 +7,7 @@ let DocumentTitle = document.querySelector('title');
 let SongList = document.querySelector('.song-list');
 let PlayList = document.querySelector('.play-list');
 let AboutContainer = document.querySelector('.about-container')
+let BlogContainer = document.querySelector('.blog-container')
 
 
 
@@ -202,4 +203,27 @@ if (window.location.hash === '#about') {
     AboutToggle();
 } else {
     AboutContainer.style.display = "none";
+}
+
+
+
+BlogContainer.style.display = "none";
+function BlogToggle() {
+    if (BlogContainer.style.display == "none") {
+        BlogContainer.style.display = 'flex';
+        toggleSideNav();
+
+    }
+    else {
+        BlogContainer.style.display = "none";
+        toggleSideNav();
+
+    }
+}
+
+// if url is index.html#about-section run AboutToggle()
+if (window.location.hash === '#blog') {
+    BlogToggle();
+} else {
+    BlogContainer.style.display = "none";
 }
