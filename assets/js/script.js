@@ -6,6 +6,7 @@ let MusicPlayDev = document.querySelector('.MusicPlayDiv');
 let DocumentTitle = document.querySelector('title');
 let SongList = document.querySelector('.song-list');
 let PlayList = document.querySelector('.play-list');
+let AboutContainer = document.querySelector('.about-container')
 
 
 
@@ -179,4 +180,19 @@ function Vr() {
         Container.style.scale = 1;
     }
 
+}
+
+
+AboutContainer.style.display = "none";
+function AboutToggle() {
+    if (AboutContainer.style.display == "none") {
+        AboutContainer.style.display = 'flex';
+        toggleSideNav();
+
+    }
+    else {
+        AboutContainer.style.display = "none";
+        toggleSideNav();
+
+    }
 }
