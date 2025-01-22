@@ -283,9 +283,10 @@ function sendEmail(e) {
         const email = "shemane@gmail.com";
         setTimeout(() => {
             const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            // window.location.href = mailtoLink; target black
             window.open(mailtoLink, '_blank');
 
-        }, 50)
+        }, 10)
 
     }
 }
