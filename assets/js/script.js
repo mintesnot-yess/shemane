@@ -179,16 +179,6 @@ function prevSong() {
 let Container = document.querySelector('.container')
 Container.style.scale = 1;
 
-function Vr() {
-    if (Container.style.scale == 1) {
-        Container.style.scale = .7;
-    } else {
-        Container.style.scale = 1;
-    }
-
-}
-
-
 AboutContainer.style.display = "none";
 function AboutToggle() {
     if (AboutContainer.style.display == "none") {
