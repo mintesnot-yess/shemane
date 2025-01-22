@@ -8,6 +8,7 @@ let SongList = document.querySelector('.song-list');
 let PlayList = document.querySelector('.play-list');
 let AboutContainer = document.querySelector('.about-container')
 let BlogContainer = document.querySelector('.blog-container')
+let ContactContainer = document.querySelector('.contact-container')
 
 
 
@@ -56,6 +57,8 @@ function playMusic() {
     if (audio.paused) {
         audio.play();
         DocumentTitle.innerHTML = 'Shemane ⏺ ' + musicFiles[0].title;
+        playButtons[0].querySelector('i').classList.remove('fa-play');
+        playButtons[0].querySelector('i').classList.add('fa-pause');
 
     }
     else {
@@ -65,19 +68,6 @@ function playMusic() {
     }
 }
 
-function nextSong() {
-    currentSongIndex = (currentSongIndex + 1) % musicFiles.length;
-    MusicTitle.innerHTML = musicFiles[currentSongIndex].title;
-    audio.src = musicFiles[currentSongIndex].file;
-    AlbemArt.style.background = `url(${musicFiles[currentSongIndex].albumArt})center/cover `;
-    DocumentTitle.innerHTML = 'Shemane ⏺ ' + musicFiles[currentSongIndex].title;
-
-    audio.play();
-}
-function prevSong() {
-    currentSongIndex = (currentSongIndex - 1 + musicFiles.length) % musicFiles.length;
-    playMusic();
-}
 audio.addEventListener('play', function () {
     MusicPlayDev.innerHTML = '<i class="fa-solid fa-pause"></i>';
 })
@@ -106,7 +96,7 @@ musicFiles.forEach((song, index) => {
     SongList.appendChild(li);
 });
 
-const playButtons = document.querySelectorAll('.play-button');
+let playButtons = document.querySelectorAll('.play-button');
 
 playButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -165,9 +155,24 @@ function PlayListToggle() {
 
 }
 
-PlayList.addEventListener('blur', () => {
-    PlayList.style.display = 'none';
-});
+function nextSong() {
+    playButtons[(currentSongIndex + musicFiles.length) % musicFiles.length].querySelector('i').classList.remove('fa-pause');
+    playButtons[(currentSongIndex + musicFiles.length) % musicFiles.length].querySelector('i').classList.add('fa-play');
+    currentSongIndex = (currentSongIndex + 1) % musicFiles.length;
+    MusicTitle.innerHTML = musicFiles[currentSongIndex].title;
+    audio.src = musicFiles[currentSongIndex].file;
+    AlbemArt.style.background = `url(${musicFiles[currentSongIndex].albumArt})center/cover `;
+    DocumentTitle.innerHTML = 'Shemane ⏺ ' + musicFiles[currentSongIndex].title;
+    playButtons[currentSongIndex].querySelector('i').classList.remove('fa-play');
+    playButtons[currentSongIndex].querySelector('i').classList.add('fa-pause');
+    audio.play();
+
+}
+
+function prevSong() {
+    currentSongIndex = (currentSongIndex - 1 + musicFiles.length) % musicFiles.length;
+    playMusic();
+}
 
 
 
@@ -226,4 +231,61 @@ if (window.location.hash === '#blog') {
     BlogToggle();
 } else {
     BlogContainer.style.display = "none";
+}
+
+
+
+ContactContainer.style.display = "none";
+function ContactToggle() {
+    if (ContactContainer.style.display == "none") {
+        ContactContainer.style.display = 'flex';
+        toggleSideNav();
+
+    }
+    else {
+        ContactContainer.style.display = "none";
+        toggleSideNav();
+
+    }
+}
+
+// if url is index.html#about-section run AboutToggle()
+if (window.location.hash === '#contact') {
+    ContactToggle();
+} else {
+    ContactContainer.style.display = "none";
+}
+
+
+function sendEmail(e) {
+    e.preventDefault();
+
+    const subjectElement = document.getElementById("subject");
+    const bodyElement = document.getElementById("body");
+    const SubmitBtn = document.getElementById("submit");
+
+
+    // Trim and validate input fields
+    const subject = subjectElement.value.trim();
+    const body = bodyElement.value.trim();
+
+    if (!subject) {
+        subjectElement.focus();
+        return;
+    }
+    if (!body) {
+        bodyElement.focus();
+        return;
+    }
+
+    else { // Construct the mailto link
+        SubmitBtn.innerHTML = 'Sending...';
+        const email = "shemane@gmail.com";
+        setTimeout(() => {
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(mailtoLink, '_blank');
+
+        }, 50)
+
+    }
 }
