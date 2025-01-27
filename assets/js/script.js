@@ -1,7 +1,9 @@
 let Aside = document.querySelector('aside');
 let Main = document.querySelector('main');
 let AlbemArt = document.querySelector('.albem-art');
+let ArtistTitle = document.querySelector('.music-artist');
 let MusicTitle = document.querySelector('.music-title');
+
 let MusicPlayDev = document.querySelector('.MusicPlayDiv');
 let DocumentTitle = document.querySelector('title');
 let SongList = document.querySelector('.song-list');
@@ -15,15 +17,18 @@ let ContactContainer = document.querySelector('.contact-container')
 // musics and albem art file arrey list
 let musicFiles = [
     {
+        artist: "drak",
         title: "Hotline Bling",
         file: "assets/music/music1.mp3",
         albumArt: "assets/images/two.png"
     },
     {
+        artist: "drak",
         title: "Toosie Slide",
         file: "assets/music/music2.mp3",
         albumArt: "assets/images/tworappers.png"
     }, {
+        artist: "overseas",
         title: "Wake up ",
         file: "assets/music/music3.mp3",
         albumArt: "assets/images/twowide.png"
@@ -49,6 +54,10 @@ let currentSongIndex = 0;
 let audio = new Audio();
 AlbemArt.style.background = `url(${musicFiles[0].albumArt}) center/cover`;
 MusicTitle.innerHTML = musicFiles[0].title;
+ArtistTitle.innerHTML = musicFiles[0].artist;
+
+
+
 audio.src = musicFiles[currentSongIndex].file;
 
 
@@ -119,6 +128,8 @@ playButtons.forEach((button) => {
         }
 
         MusicTitle.innerHTML = song.title;
+        ArtistTitle.innerHTML = song.artist;
+
         AlbemArt.style.background = `url(${song.albumArt})center/cover `;
         DocumentTitle.innerHTML = 'Shemane ⏺ ' + song.title;
     });
@@ -160,6 +171,8 @@ function nextSong() {
     playButtons[(currentSongIndex + musicFiles.length) % musicFiles.length].querySelector('i').classList.add('fa-play');
     currentSongIndex = (currentSongIndex + 1) % musicFiles.length;
     MusicTitle.innerHTML = musicFiles[currentSongIndex].title;
+    ArtistTitle.innerHTML = musicFiles[currentSongIndex].artist;
+
     audio.src = musicFiles[currentSongIndex].file;
     AlbemArt.style.background = `url(${musicFiles[currentSongIndex].albumArt})center/cover `;
     DocumentTitle.innerHTML = 'Shemane ⏺ ' + musicFiles[currentSongIndex].title;

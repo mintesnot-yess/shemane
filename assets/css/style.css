@@ -228,6 +228,7 @@ main {
                 align-items: center;
                 gap: 80px;
                 z-index: 2;
+                text-transform: capitalize;
 
 
                 h1 {
