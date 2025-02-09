@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Home - Shemane - Crafting Africa’s Soundtrack, One Artist at a Time!</title>
+    <link rel="canonical" href="https://shemane.com">
+    <meta property="og:url" content="https://shemane.com">
+    <meta property="og:image" content="assets/images/shemane-logo.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shemane - Crafting Africa’s Soundtrack, One Artist at a Time!">
+    <meta name="keywords"
+        content="Shemane, record producing, event organizing, Ethiopia, artists management, Kassmase, Jenberu Demeke, Uno, concerts, music production, shemane musika, record labels in Ethiopia, record labels in addis ababa, artist management ethiopia, concerts in addis ababa, events in addis ababa, Ethiopian music, ethiopian artists, kassmasse, jemberu, wegdayit, laeke, guta wakuma, julian marley, protoje, mulatu astatke, mutivation">
+    <meta name="description"
+        content="At Shemane, we are more than a record label—we are a hub of creativity and excellence. From producing chart-topping hits to nurturing the next generation of talent and hosting unforgettable events, our mission is to elevate African artistry to new heights. Join us as we craft the soundtrack of Africa, one brilliant artist at a time.">
+    <meta property="og:description"
+        content="At Shemane, we are more than a record label—we are a hub of creativity and excellence. From producing chart-topping hits to nurturing the next generation of talent and hosting unforgettable events, our mission is to elevate African artistry to new heights. Join us as we craft the soundtrack of Africa, one brilliant artist at a time.">
+    <meta name="twitter:title" content="Shemane - Crafting Africa’s Soundtrack, One Artist at a Time!">
+    <meta name="twitter:image" content="assets/images/shemane-logo.png">
+    <meta name="twitter:description"
+        content="At Shemane, we are more than a record label—we are a hub of creativity and excellence. From producing chart-topping hits to nurturing the next generation of talent and hosting unforgettable events, our mission is to elevate African artistry to new heights. Join us as we craft the soundtrack of Africa, one brilliant artist at a time.">
+    <meta name="twitter:card" content="summary">
+    <script
+        type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","name":"Shemane","url":"https://shemane.com"}</script>
+    <!-- FavIcon -->
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/images/shemane-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/shemane-logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/shemane-logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/shemane-logo.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/shemane-logo.png">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        transition: all 0.3s;
+        color: var(--text-color);
+        box-sizing: border-box;
+
+    }
+
+    :root {
+        --primary-color: #bd9752;
+        --secondary-color: #000000;
+        --tertiary-color: #ffffff;
+        --text-color: #fff;
+        --side-bg-color: #000000;
+        --side-bg-color-50: #00000062;
+        --tertiary-color-50: #ffffff86;
+        --secondary-color-50: #00000062;
+
+    }
+
+    body {
+        background: var(--primary-color);
+
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container {
+        width: 100%;
+        margin: auto;
+
+
+    }
+
+    .container::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: url('assets/images/glitch3.png') no-repeat center/cover;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: difference;
+        opacity: .7;
+        pointer-events: none;
+    }
+
+
+    .shemane-logo {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+
+        img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    header {
+        position: fixed;
+        width: calc(100% - 20px);
+        margin: 0 10px;
+        top: 0;
+        left: 0;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            ul {
+                display: flex;
+
+                li {
+                    list-style: none;
+
+                    a {
+                        text-decoration: none;
+
+
+                    }
+
+                    button {
+                        background: transparent;
+                        border: none;
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+
+                        &:hover {
+                            background: var(--secondary-color-50);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .aside-container {
+        position: fixed;
+        top: 50%;
+        left: -100%;
+        opacity: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+
+        aside {
+            width: 250px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--side-bg-color);
+
+            ul {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 30px;
+
+                li {
+                    list-style: none;
+
+
+                    a {
+                        text-decoration: none;
+
+                        cursor: pointer;
+                        padding: 10px;
+                        display: flex;
+                        font: 550 1.3rem / 1.625rem "Open Sans", sans-serif;
+                        align-items: center;
+                        gap: 10px;
+                        justify-content: start;
+                        opacity: 0.8;
+                        color: var(--text-color);
+
+                        &:hover {
+                            opacity: 1;
+
+                            i {
+                                scale: 1.3;
+                            }
+
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .aside-closer {
+            flex: 1;
+            height: 100%;
+            cursor: pointer;
+            background: var(--side-bg-color-50);
+        }
+    }
+
+    main {
+
+        .side-buttons {
+            position: absolute;
+            top: 45%;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+
+
+            ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 30px;
+
+                li {
+                    list-style: none;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: grid;
+                    place-content: center;
+                    backdrop-filter: blur(20px);
+
+
+
+                    a {
+                        text-decoration: none;
+                        color: var(--text-color);
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        padding: 10px;
+                        filter: drop-shadow(0 0 1px black);
+
+
+
+
+
+                    }
+
+                    &:hover {
+                        background: var(--secondary-color-50);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .about-container {
+        margin: 20px auto;
+        font-family: sans-serif;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+
+        .about-hero {
+            width: 100%;
+            height: 500px;
+            display: grid;
+            place-content: center;
+            background: url(bg.jpg) center/cover no-repeat fixed;
+            text-align: center;
+
+            h1 {
+                font: 600 3.5rem / 1.625rem "Open Sans", sans-serif;
+
+                margin-bottom: 1.2rem;
+
+
+
+
+            }
+
+            h2 {
+                font: 400 1.4rem / 1.625rem "Open Sans", sans-serif;
+
+            }
+        }
+
+        h2 {
+            font: 500 2.5rem / 1.625rem "Open Sans", sans-serif;
+
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+
+
+        }
+
+        .members {
+            gap: 23px;
+            margin: 50px 0;
+            text-align: center;
+
+        }
+
+        .member-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+
+        }
+
+        .member {
+            background: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-top: 1rem;
+        }
+
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .member .links {
+            display: flex;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            gap: 15px;
+            list-style: none;
+            font-size: 1.4rem;
+
+            li {
+                opacity: .8;
+            }
+
+            li:hover {
+                scale: 1.1;
+                opacity: 1;
+            }
+        }
+
+        .member:hover img {
+            scale: 1.1;
+        }
+
+
+
+
+
+
+        .about-contents {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            .text-center {
+                text-align: center;
+                margin: 30px 0;
+            }
+
+            .text-center h1 {
+                font-size: 2.5rem;
+                font-weight: bold;
+
+
+            }
+
+            .text-center p {
+                margin-top: 8px;
+            }
+
+            .flex {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                margin-top: 32px;
+            }
+
+            .flex div {
+                flex: 1;
+                padding: 8px;
+            }
+
+            .flex img {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+            }
+
+            .flex h2 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+
+            .flex p {
+                margin-top: 16px;
+                font: 400 1.3rem / 1.3rem "Open Sans", sans-serif;
+
+            }
+
+            .flex a {
+                font-size: 1.125rem;
+                font-weight: bold;
+                margin-top: 16px;
+                display: inline-block;
+                text-decoration: none;
+                color: black;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            position: relative;
+            align-self: center;
+
+            span {
+                position: absolute;
+                opacity: 0;
+                overflow: hidden;
+                pointer-events: none;
+                background: var(--secondary-color);
+                border-radius: 10px;
+                padding: 5px;
+                font-size: 1.5rem;
+                margin: 0 10px;
+
+            }
+
+
+            li {
+
+                display: grid;
+
+
+
+                &:hover {
+                    span {
+                        opacity: 1;
+                    }
+
+                    i {
+                        scale: 1.2;
+                    }
+
+                }
+
+
+            }
+
+            a {
+                text-decoration: none;
+                place-self: center;
+
+                font-size: 1.7rem;
+            }
+        }
+
+
+
+    }
+
+
+
+    @media (max-width: 768px) {
+        .flex {
+            flex-direction: column;
+        }
+
+        .flex div {
+            padding: 0;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="shemane-logo">
+            <img src="assets/images/shemane-logo.png" alt="">
+
+        </div>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <button title="bar" class="fa fa-bars-staggered"></button>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <button title="theme" class="fa fa-moon" id="theme-toggler"></button>
+
+
+                    </li>
+                </ul>
+
+            </nav>
+        </header>
+        <div class="aside-container">
+            <aside>
+                <ul>
+                    <li>
+                        <a href="#about">
+                            <i class="fa fa-info-circle"></i><span>About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <i class="fa fa-phone"></i> <span>Contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#service">
+                            <i class="fa-solid fa-check"></i> <span>Services</span> </a>
+                    </li>
+                </ul>
+            </aside>
+            <div class="aside-closer"></div>
+        </div>
+        <main>
+            <div class="side-buttons">
+                <ul>
+                    <li>
+                        <a href="#about">
+                            <i class="fa fa-info-circle"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <i class="fa fa-play"></i>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="about-container">
+                <div class="about-hero">
+                    <h1 class="title">About</h1>
+                    <h2>ABOUT OUR SPECIAL MUSIC PLACE</h2>
+                </div>
+                <div class="about-contents">
+                    <div class="text-center">
+                        <h1>Welcome to Shemane </h1>
+                    </div>
+                    <div class="flex">
+                        <div>
+                            <img src="bg.jpg" alt="A close-up of a spinning vinyl record on a turntable">
+                        </div>
+                        <div>
+                            <h2>SHEMANE</h2>
+                            <p>
+                                Shemane is a premier music studio dedicated to producing high-quality music and
+                                promoting
+                                African artists. Our state-of-the-art facilities and experienced team ensure that every
+                                project we undertake is a success. Join us in celebrating the rich cultural heritage of
+                                African music.
+                            </p>
+                            <p>
+                                At Shemane, we believe in the power of music to bring people together and create lasting
+                                memories.
+                                Our mission is to support and elevate African artists by providing them with the
+                                resources and
+                                opportunities they need to succeed in the music industry. Whether you're an aspiring
+                                musician or
+                                an established artist, Shemane is the perfect place to bring your musical vision to
+                                life.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-contents">
+
+                    <div class="flex">
+
+                        <div>
+                            <h2>Mission</h2>
+                            <p>
+                                Shemane is a premier music studio dedicated to producing high-quality music and
+                                promoting African artists. Our mission is to inspire and nurture the human spirit
+                                through music,
+                                providing a platform for artists to express their creativity and connect with a global
+                                audience.
+                            </p>
+
+                            <h2>Vision</h2>
+                            <p>
+
+                                Our vision is to be the leading music studio in Africa, fostering creativity and
+                                innovation
+                                in the music industry. We aim to create a vibrant community where artists can thrive and
+                                share their talents with the world.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="bg.jpg" alt="A close-up of a spinning vinyl record on a turntable">
+                        </div>
+                    </div>
+                </div>
+                <div class="members">
+                    <h2>Our Members</h2>
+                    <div class="member-list">
+                        <div class="member">
+                            <img src="image1.jpeg" alt="Member 1">
+                            <h3>John Doe</h3>
+                            <p>Music Producer</p>
+                            <ul class="links">
+                                <li>
+                                    <a href="https://www.facebook.com" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="member">
+                            <img src="images2.jpeg" alt="Member 2">
+                            <h3>Jane Smith</h3>
+                            <p>Marketing Specialist</p>
+                            <ul class="links">
+                                <li>
+                                    <a href="https://www.facebook.com" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- social links -->
+                <ul class="social-links">
+                    <li>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-tiktok"></i> <span>TikTok</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-youtube"></i> <span>Youtube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-facebook"></i> <span>facebook</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-instagram"></i> <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-x"></i> <span>X</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </main>
+
+
+
+
+    </div>
+
+    <script>
+        const navBtn = document.querySelector('button[title="bar"]');
+        const asideContainer = document.querySelector('.aside-container');
+        const asideCloser = document.querySelector('.aside-closer');
+
+        navBtn.addEventListener('click', () => {
+            asideContainer.style.left = '0';
+            asideContainer.style.opacity = '1';
+
+        });
+
+        asideCloser.addEventListener('click', () => {
+            asideContainer.style.left = '-100%';
+            asideContainer.style.opacity = '0';
+
+        });
+        const themeToggler = document.getElementById('theme-toggler');
+        let isDarkMode = false;
+
+        themeToggler.addEventListener('click', () => {
+            if (isDarkMode) {
+                document.documentElement.style.setProperty('--primary-color', '#bd9752');
+                document.documentElement.style.setProperty('--secondary-color', '#000000');
+                document.documentElement.style.setProperty('--tertiary-color', '#ffffff');
+                document.documentElement.style.setProperty('--tertiary-color-50', '#ffffff86');
+                document.documentElement.style.setProperty('--secondary-color-50', '#00000062');
+                themeToggler.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.style.setProperty('--primary-color', '#000000');
+                document.documentElement.style.setProperty('--secondary-color', '#bd9752');
+                document.documentElement.style.setProperty('--tertiary-color', '#000000');
+                document.documentElement.style.setProperty('--tertiary-color-50', '#00000086');
+                document.documentElement.style.setProperty('--secondary-color-50', '#bd975262');
+                themeToggler.classList.replace('fa-moon', 'fa-sun');
+            }
+            isDarkMode = !isDarkMode;
+        });
+
+    </script>
+</body>
+
+</html>

@@ -16,7 +16,9 @@
 </head>
 
 <body>
+
     <div class="container">
+
         <aside>
             <ul>
                 <li>
@@ -34,7 +36,9 @@
         </aside>
 
         <main>
+
             <article class="hero-page">
+
                 <section>
                     <div class="header">
                         <span onclick="toggleSideNav()" class="side-nav-toggle">
@@ -43,28 +47,25 @@
 
                     </div>
 
-                    <div class="music-play">
+                    <!-- <div class="music-play">
                         <div class="buttons">
                             <span onclick="playMusic()" class="MusicPlayDiv"> <i class="fa-solid fa-play"></i>
                             </span>
                             <span onclick="nextSong()" class="forward"><i class="fa-solid fa-forward"></i></span>
                             <span onclick="PlayListToggle()" class="forward"><i class="fa fa-list"></i></span>
 
-
-
-
                         </div>
                         <div class="play-list">
                             <ul class="song-list">
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </section>
 
                 <section class="albem-art">
                     <div class="text">
-                        <h1>SHEMANE</h1>
-                        <p class="music-title">Music Title</p>
+                        <h1> </h1>
+                        <p class="music-title"></p>
 
                     </div>
                 </section>
@@ -72,8 +73,20 @@
                 <section>
                     <div class="header">
 
-                        <!-- <span onclick="switchMode()">
-                            <i class="fa-solid fa-moon"></i> </span> -->
+                        <span onclick="switchMode()">
+                            <i class="fa-solid fa-moon"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="navs">
+                        <a title="about" href="#about">
+                            <i class="fa fa-info"></i>
+                        </a>
+                        <a title="page" href="#page">
+                            <i class="fa-solid fa-moon"></i>
+                        </a>
+
                     </div>
 
 
@@ -89,6 +102,8 @@
                 </section>
 
             </article>
+
+
             <article class="about-container">
                 <div class="left">
                     <button onclick="AboutToggle()" class="close" title="close" name="close"> <i
@@ -112,6 +127,8 @@
 
                 </div>
             </article>
+
+
             <article class="blog-container">
                 <button onclick="BlogToggle()" class="close" title="close" name="close"> <i
                         class="fa-solid fa-angle-left"></i> </button>
@@ -141,6 +158,8 @@
                     </div>
                 </div>
             </article>
+
+
             <article class="contact-container">
                 <button onclick="ContactToggle()" class="close" title="close" name="close"> <i
                         class="fa-solid fa-angle-left"></i> </button>
@@ -180,7 +199,15 @@
                     </div>
                 </div>
             </article>
+
+
         </main>
+    </div>
+
+    <div class="glitch">
+        <img src="assets/images/glitch3.png" alt="">
+
+
     </div>
 
     <script src="assets/js/script.js"></script>

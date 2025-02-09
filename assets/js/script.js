@@ -7,6 +7,7 @@ let DocumentTitle = document.querySelector('title');
 let SongList = document.querySelector('.song-list');
 let PlayList = document.querySelector('.play-list');
 let AboutContainer = document.querySelector('.about-container')
+let HeroPage = document.querySelector('.hero-page')
 let BlogContainer = document.querySelector('.blog-container')
 let ContactContainer = document.querySelector('.contact-container')
 
@@ -47,9 +48,9 @@ function toggleSideNav() {
 
 let currentSongIndex = 0;
 let audio = new Audio();
-AlbemArt.style.background = `url(${musicFiles[0].albumArt}) center/cover`;
-MusicTitle.innerHTML = musicFiles[0].title;
-audio.src = musicFiles[currentSongIndex].file;
+// AlbemArt.style.background = `url(${musicFiles[0].albumArt}) center/cover`;
+// MusicTitle.innerHTML = musicFiles[0].title;
+// audio.src = musicFiles[currentSongIndex].file;
 
 
 
@@ -179,15 +180,18 @@ function prevSong() {
 let Container = document.querySelector('.container')
 Container.style.scale = 1;
 
-AboutContainer.style.display = "none";
+// AboutContainer.style.display = "none";
 function AboutToggle() {
     if (AboutContainer.style.display == "none") {
         AboutContainer.style.display = 'flex';
+        HeroPage.style.display = 'none';
         toggleSideNav();
 
     }
     else {
         AboutContainer.style.display = "none";
+        HeroPage.style.display = 'flex';
+
         toggleSideNav();
 
     }
