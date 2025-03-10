@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Home - Shemane - Crafting Africa’s Soundtrack, One Artist at a Time!</title>
+    <title> Home - Shemane - Crafting Africa’s Soundtrack, One Artist at a Time!</title>
     <link rel="canonical" href="https://shemane.com">
     <meta property="og:url" content="https://shemane.com">
     <meta property="og:image" content="assets/images/shemane-logo.png">
-
     <meta property="og:type" content="website">
     <meta name="twitter:image" content="assets/images/shemane-logo.png">
     <meta property="og:title" content="Shemane - Crafting Africa’s Soundtrack, One Artist at a Time!">
@@ -32,44 +30,53 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/shemane-logo.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/shemane-logo.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/shemane-logo.png">
-
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
-
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+
 
     * {
         margin: 0;
         padding: 0;
         transition: all 0.3s;
-        color: var(--text-color);
         box-sizing: border-box;
 
+
+
+    }
+
+    *h1,
+    h2,
+    h3,
+    p {
+        color: var(--font-color);
     }
 
     :root {
 
-        /* --primary-color: #bd9752; */
-        --primary-color: #bba479;
-
+        --primary-color: #e2d3b9;
         --secondary-color: #000000;
         --tertiary-color: #ffffff;
-        --text-color: #fff;
+        --text-color: #000000;
+        --font-color: #000000;
         --side-bg-color: #000000;
         --side-bg-color-50: #00000062;
         --tertiary-color-50: #ffffff86;
-        --secondary-color-50: #00000062;
+        --secondary-color-50: #00000034;
 
     }
 
+
+
+
     body {
         background: var(--primary-color);
+        overflow: hidden auto;
+
 
     }
 
@@ -78,7 +85,7 @@
     }
 
     .container {
-        width: 100%;
+        width: 90%;
         margin: auto;
 
 
@@ -88,10 +95,28 @@
 
 
         100% {
-            top: 100%;
+            top: 70%;
         }
 
     }
+
+    @keyframes opacity-animation {
+
+
+        0% {
+            opacity: 0;
+            background: #000;
+            filter: blur(10px);
+        }
+
+        100% {
+            opacity: 1;
+        }
+
+
+    }
+
+
 
     .container::after {
         content: '';
@@ -102,8 +127,8 @@
         width: 100%;
         height: 100%;
         mix-blend-mode: difference;
-        opacity: .7;
         pointer-events: none;
+        z-index: 101;
 
     }
 
@@ -115,8 +140,8 @@
         pointer-events: none;
 
         img {
-            width: 90%;
-            height: 90%;
+            width: 70%;
+            height: 70%;
             object-fit: contain;
             position: absolute;
             top: 50%;
@@ -124,19 +149,23 @@
             transform: translate(-50%, -50%);
             animation: margin-animation;
             animation-timeline: scroll();
+            filter: invert();
         }
     }
 
     header {
         position: fixed;
-        width: calc(100% - 20px);
-        margin: 0 10px;
-        top: 0;
-        left: 0;
+        max-width: 1800px;
+        width: 95%;
+        margin: auto;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%);
         height: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 100;
 
         nav {
             display: flex;
@@ -158,11 +187,12 @@
                     button {
                         background: transparent;
                         border: none;
-                        font-size: 1.5rem;
+                        font-size: 1.4rem;
                         cursor: pointer;
                         width: 40px;
                         height: 40px;
                         border-radius: 50%;
+                        color: var(--font-color);
 
                         &:hover {
                             background: var(--secondary-color-50);
@@ -176,13 +206,14 @@
     .aside-container {
         position: fixed;
         top: 50%;
-        left: -100%;
-        opacity: 0;
+        opacity: .8;
         transform: translateY(-50%);
         width: 100%;
+        left: -100%;
         height: 100%;
         display: flex;
         align-items: center;
+        z-index: 1;
 
 
         aside {
@@ -214,7 +245,8 @@
                         gap: 10px;
                         justify-content: start;
                         opacity: 0.8;
-                        color: var(--text-color);
+                        color: white;
+
 
                         &:hover {
                             opacity: 1;
@@ -243,25 +275,26 @@
         .side-buttons {
             position: absolute;
             top: 45%;
-            right: 0;
+            right: calc(3% - 10px);
             transform: translateY(-50%);
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 0 10px;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+            align-items: end;
 
-
-            ul {
+            .social-links {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                gap: 30px;
+                flex-direction: row;
+                gap: 10px;
 
                 li {
                     list-style: none;
-                    width: 50px;
-                    height: 50px;
+                    width: 40px;
+                    height: 40px;
                     border-radius: 50%;
                     display: grid;
                     place-content: center;
@@ -271,11 +304,11 @@
 
                     a {
                         text-decoration: none;
-                        color: var(--text-color);
-                        font-size: 1.5rem;
+                        font-size: 1.2rem;
                         cursor: pointer;
                         padding: 10px;
-                        filter: drop-shadow(0 0 1px black);
+                        color: var(--font-color);
+
 
 
 
@@ -285,6 +318,46 @@
 
                     &:hover {
                         background: var(--secondary-color-50);
+                    }
+                }
+            }
+
+
+            .aside-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 30px;
+
+                li {
+                    list-style: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: grid;
+                    place-content: center;
+                    backdrop-filter: blur(20px);
+
+
+
+                    a {
+                        text-decoration: none;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        padding: 10px;
+                        color: var(--font-color);
+
+
+
+
+
+
+                    }
+
+                    &:hover {
+                        background: var(--secondary-color-50);
+
                     }
                 }
             }
@@ -305,13 +378,14 @@
             height: 500px;
             display: grid;
             place-content: center;
-            background: url(bg.jpg) center/cover no-repeat fixed;
             text-align: center;
 
-            h1 {
-                font: 600 3.5rem / 1.625rem "Open Sans", sans-serif;
 
+            h1 {
+                font: 400 3.5rem / 1.625rem "Chicle", serif;
                 margin-bottom: 1.2rem;
+                color: var(--font-color);
+
 
 
 
@@ -320,18 +394,23 @@
 
             h2 {
                 font: 400 1.4rem / 1.625rem "Open Sans", sans-serif;
+                color: var(--font-color);
+
 
             }
         }
 
         h2 {
             font: 500 2.5rem / 1.625rem "Open Sans", sans-serif;
+            color: var(--font-color);
+
 
         }
 
         h3 {
             font-size: 2rem;
             margin-bottom: 1.5rem;
+
 
 
         }
@@ -352,12 +431,12 @@
         }
 
         .member {
-            background: var(--secondary-color);
+            background: transparent;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
             width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgb(100, 100, 100);
             position: relative;
             margin-top: 1rem;
         }
@@ -373,11 +452,15 @@
         .member h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            color: var(--font-color);
+
         }
 
         .member p {
             font-size: 1rem;
             margin-bottom: 1rem;
+            color: var(--font-color);
+
         }
 
         .member .links {
@@ -392,6 +475,11 @@
 
             li {
                 opacity: .8;
+
+                a {
+                    color: var(--font-color);
+
+                }
             }
 
             li:hover {
@@ -416,11 +504,18 @@
             .text-center {
                 text-align: center;
                 margin: 30px 0;
+                color: var(--font-color);
+
             }
 
             .text-center h1 {
                 font-size: 2.5rem;
-                font-weight: bold;
+                font: 400 2.5rem / 1.625rem "Chicle", serif;
+                font-weight: 400;
+                font-style: normal;
+                color: var(--font-color);
+
+
 
 
             }
@@ -451,11 +546,15 @@
                 font-size: 1.5rem;
                 font-weight: bold;
                 margin: 10px 0;
+                color: var(--font-color);
+
             }
 
             .flex p {
                 margin-top: 16px;
                 font: 400 1.3rem / 1.3rem "Open Sans", sans-serif;
+                color: var(--font-color);
+
 
             }
 
@@ -465,7 +564,8 @@
                 margin-top: 16px;
                 display: inline-block;
                 text-decoration: none;
-                color: black;
+                color: var(--font-color);
+
             }
         }
 
@@ -499,6 +599,7 @@
                 &:hover {
                     span {
                         opacity: 1;
+                        color: white;
                     }
 
                     i {
@@ -513,7 +614,7 @@
             a {
                 text-decoration: none;
                 place-self: center;
-
+                color: var(--font-color);
                 font-size: 1.7rem;
             }
         }
@@ -524,20 +625,22 @@
 
     .blog-container {
         width: 100%;
-        height: 100vh;
         z-index: 10;
         display: flex;
         flex-direction: column;
         gap: 20px;
-        align-items: center;
-        justify-content: center;
+        animation: opacity-animation;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
 
 
 
 
         h1 {
             font: 600 4rem / 1.625rem "Open Sans", sans-serif;
-            margin: 20px 0;
+            margin: 100px 0;
+            text-align: center;
+            width: 100%;
 
         }
 
@@ -545,10 +648,8 @@
             max-width: 800px;
             width: 100%;
             display: flex;
-            align-items: center;
-            padding: 20px 0;
+            align-items: start;
             border-radius: 2px;
-            box-shadow: 0 4px 6px var(--black-100);
             animation: top-to-bottom .5s;
 
 
@@ -556,10 +657,10 @@
 
         .post .date {
             margin-right: 20px;
-            font: 100 1.3rem / 1.625rem "Open Sans", sans-serif;
+            font: 600 1.3rem / 1.625rem "Open Sans", sans-serif;
             color: var(--white-80);
             min-width: 80px;
-            text-align: center;
+            text-align: start;
             animation: top-to-bottom .7s;
 
         }
@@ -567,7 +668,7 @@
 
 
         .post .content a {
-            font: 550 1.5rem / 1.625rem "Open Sans", sans-serif;
+            font: 300 1.6rem / 1.625rem "Open Sans", sans-serif;
             color: var(--white-100);
             text-decoration: none;
             animation: top-to-bottom .1s;
@@ -600,6 +701,8 @@
                 text-align: center;
                 font: 600 3rem / 2rem "Open Sans", sans-serif;
                 margin: 20px 0;
+                color: var(--font-color);
+
 
 
             }
@@ -644,12 +747,16 @@
 
                         .artist {
                             font: 600 1.5rem / 1.625rem "Open Sans", sans-serif;
+                            color: var(--font-color);
+
 
 
                         }
 
                         .title {
                             font: 100 1.3rem / 1.625rem "Open Sans", sans-serif;
+                            color: var(--font-color);
+
 
 
                         }
@@ -663,6 +770,8 @@
                         font-size: 1.5rem;
                         background: transparent;
                         cursor: pointer;
+                        color: var(--font-color);
+
 
 
                         &:hover {
@@ -712,6 +821,7 @@
                         font-size: 1.7rem;
                         cursor: pointer;
                         border: solid 1px transparent;
+                        color: var(--font-color);
 
 
                         &:hover {
@@ -826,6 +936,8 @@
         .blog-container {
             h1 {
                 font: 600 2rem / 1.625rem "Open Sans", sans-serif;
+                color: var(--font-color);
+
 
             }
 
@@ -836,19 +948,17 @@
                 flex-direction: column;
                 padding: 0;
                 justify-content: center;
-                align-items: center;
-                text-align: center;
+                align-items: start;
 
 
             }
 
             .post .date {
                 margin: 0;
-                font: 100 1.3rem / 1.625rem "Open Sans", sans-serif;
-                color: var(--white-80);
                 min-width: 80px;
-                text-align: center;
                 animation: top-to-bottom .7s;
+                color: var(--font-color);
+
 
             }
 
@@ -856,8 +966,9 @@
 
             .post .content a {
                 margin: 0;
+                color: var(--font-color);
 
-                font: 550 1.3rem / 1.625rem "Open Sans", sans-serif;
+                font: 100 1.3rem / 1.625rem "Open Sans", sans-serif;
 
             }
         }
@@ -910,7 +1021,8 @@
         </div>
         <main>
             <div class="side-buttons">
-                <ul>
+                <div></div>
+                <ul class="aside-nav">
                     <li>
                         <a href="#about">
                             <i class="fa fa-triangle-circle-square"></i>
@@ -922,6 +1034,28 @@
                         </a>
 
                     </li>
+
+                </ul>
+                <ul class="social-links">
+                    <li>
+                        <a href="#about">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#music-play">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#music-play">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+
+                    </li>
+
                 </ul>
             </div>
 
@@ -931,9 +1065,6 @@
                     <h2>ABOUT OUR SPECIAL MUSIC PLACE</h2>
                 </div>
                 <div class="about-contents">
-                    <div class="text-center">
-                        <h1>Welcome to Shemane </h1>
-                    </div>
                     <div class="flex">
                         <div>
                             <img src="bg.jpg" alt="A close-up of a spinning vinyl record on a turntable">
@@ -1278,15 +1409,20 @@
 
         });
         const themeToggler = document.getElementById('theme-toggler');
+        const LogoImage = document.querySelector('.shemane-logo img')
         let isDarkMode = false;
 
         themeToggler.addEventListener('click', () => {
             if (isDarkMode) {
-                document.documentElement.style.setProperty('--primary-color', '#bba479');
+                document.documentElement.style.setProperty('--primary-color', '#e2d3b9');
                 document.documentElement.style.setProperty('--secondary-color', '#000000');
                 document.documentElement.style.setProperty('--tertiary-color', '#ffffff');
                 document.documentElement.style.setProperty('--tertiary-color-50', '#ffffff86');
                 document.documentElement.style.setProperty('--secondary-color-50', '#00000062');
+                document.documentElement.style.setProperty('--font-color', '#000');
+                LogoImage.style.filter = "invert()";
+
+
                 themeToggler.classList.replace('fa-sun', 'fa-moon');
             } else {
                 document.documentElement.style.setProperty('--primary-color', '#000000');
@@ -1294,6 +1430,11 @@
                 document.documentElement.style.setProperty('--tertiary-color', '#000000');
                 document.documentElement.style.setProperty('--tertiary-color-50', '#00000086');
                 document.documentElement.style.setProperty('--secondary-color-50', '#bd975262');
+                document.documentElement.style.setProperty('--font-color', '#fff');
+                LogoImage.style.filter = "invert(0)";
+
+
+
                 themeToggler.classList.replace('fa-moon', 'fa-sun');
             }
             isDarkMode = !isDarkMode;
