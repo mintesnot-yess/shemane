@@ -58,7 +58,7 @@
 
     :root {
 
-        --primary-color: #e2d3b9;
+        --primary-color: #cdba9b;
         --secondary-color: #000000;
         --tertiary-color: #ffffff;
         --text-color: #000000;
@@ -94,8 +94,8 @@
     @keyframes margin-animation {
 
 
-        100% {
-            top: 70%;
+        to {
+            height: 200px;
         }
 
     }
@@ -117,60 +117,78 @@
     }
 
 
+    @keyframes zoom-out {
+        0% {
+            scale: 1.1;
+        }
+
+        100% {
+            scale: 1;
+        }
+
+    }
+
+
 
     .container::after {
         content: '';
         position: fixed;
         top: 0;
         left: 0;
-        background: url('assets/images/glitch3.png') no-repeat center/cover;
+        background: url('assets/images/grain1.png') no-repeat center/cover;
         width: 100%;
         height: 100%;
         mix-blend-mode: difference;
         pointer-events: none;
         z-index: 101;
+        animation: zoom-out;
+        animation-timeline: scroll();
+        opacity: .7;
+
 
     }
 
-
-    .shemane-logo {
+    .container::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: url('assets/images/grain1.png') no-repeat center/cover;
         width: 100%;
-        height: 100vh;
-        position: relative;
+        height: 100%;
+        mix-blend-mode: difference;
         pointer-events: none;
+        z-index: 101;
+        transform: rotate(180deg);
+        animation: zoom-out;
+        animation-timeline: scroll();
+        opacity: .7;
 
-        img {
-            width: 70%;
-            height: 70%;
-            object-fit: contain;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: margin-animation;
-            animation-timeline: scroll();
-            filter: invert();
-        }
+
     }
+
+
 
     header {
         position: fixed;
         max-width: 1800px;
         width: 95%;
-        margin: auto;
-        top: 30px;
+        margin: 15px auto;
         left: 50%;
         transform: translate(-50%);
         height: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        z-index: 100;
+        z-index: 2;
 
         nav {
             display: flex;
             justify-content: space-between;
             width: 100%;
+            padding: 35px 0;
+            background: var(--primary-color);
+
 
             ul {
                 display: flex;
@@ -203,6 +221,27 @@
         }
     }
 
+    .logo {
+
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        filter: invert();
+        width: 100%;
+        height: 100px;
+        object-fit: contain;
+        margin: 10px 0;
+        z-index: 2;
+        pointer-events: none;
+
+    }
+
+    .logo-container {
+        width: 100%;
+        height: 100vh;
+    }
+
     .aside-container {
         position: fixed;
         top: 50%;
@@ -213,7 +252,7 @@
         height: 100%;
         display: flex;
         align-items: center;
-        z-index: 1;
+        z-index: 3;
 
 
         aside {
@@ -270,7 +309,12 @@
         }
     }
 
+    main::-webkit-scrollbar {
+        display: none;
+    }
+
     main {
+
 
         .side-buttons {
             position: absolute;
@@ -370,7 +414,7 @@
         margin: 20px auto;
         font-family: sans-serif;
         justify-content: center;
-        display: flex;
+        display: none;
         flex-direction: column;
 
         .about-hero {
@@ -973,13 +1017,22 @@
             }
         }
     }
+
+
+
+    /* mobile view */
+    @media (max-width: 400px) {
+        .container::after {
+            /* background: url('assets/images/glitch1.jpeg') no-repeat center/cover; */
+
+
+        }
+    }
 </style>
 
 <body>
     <div class="container">
-        <div class="shemane-logo">
-            <img src="assets/images/shemane-logo.png" alt="">
-        </div>
+
         <header>
             <nav>
                 <ul>
@@ -991,13 +1044,18 @@
                 <ul>
                     <li>
                         <button title="theme" class="fa fa-moon" id="theme-toggler"></button>
-
-
                     </li>
                 </ul>
 
             </nav>
         </header>
+
+
+        <div class="shemane-logo">
+            <img class="logo" src="assets/images/shemane-logo.png" alt="">
+        </div>
+        <div class="logo-container"></div>
+
         <div class="aside-container">
             <aside>
                 <ul>
@@ -1287,6 +1345,10 @@
 
         </main>
     </div>
+    <!-- Include GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- Include ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script>
         const navBtn = document.querySelector('button[title="bar"]');
         const asideContainer = document.querySelector('.aside-container');
@@ -1447,7 +1509,18 @@
         })
 
 
-
+        ScrollTrigger.create({
+            animation: gsap.from(".logo", {
+                y: "100vh",
+                scale: 7,
+                yPercent: -50,
+            }),
+            scrub: true,
+            triggerL: "main",
+            start: "top center",
+            endTrigger: "main",
+            end: "top ",
+        });
 
 
 
