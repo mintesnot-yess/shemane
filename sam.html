@@ -128,7 +128,15 @@
 
     }
 
+    @keyframes down-up {
 
+        from {
+            opacity: 0;
+            transform: translateY(50%);
+            filter: blur(5px);
+        }
+
+    }
 
     .container::after {
         content: '';
@@ -234,6 +242,7 @@
         margin: 10px 0;
         z-index: 2;
         pointer-events: none;
+        transition: all 0.1s;
 
     }
 
@@ -668,6 +677,86 @@
     }
 
     .blog-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: auto;
+        width: 95%;
+
+        h2 {
+            font: 400 3rem / 1.625rem "Open Sans", sans-serif;
+            margin: 50px 0;
+            width: 100%;
+            text-align: center;
+
+        }
+
+        section {
+            flex: 1 300px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            gap: 10px;
+            background: var(--side-bg-color-50);
+            animation: down-up;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+
+
+
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+
+            .blog-detail {
+                padding: 0 10px;
+                filter: invert();
+
+                h1 {
+                    font: 600 1.4rem / 1.625rem "Open Sans", sans-serif;
+
+                }
+
+                span {
+                    font: 100 1rem / 1.625rem "Open Sans", sans-serif;
+                    opacity: .8;
+
+                }
+
+                p {
+                    font: 100 1.2rem / 1.1rem "Open Sans", sans-serif;
+                    opacity: .9;
+                }
+
+                button {
+                    padding: 10px;
+                    border: none;
+                    margin: 10px 0;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    opacity: .7;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+
+
+
+                }
+            }
+
+
+
+        }
+
+
+
+    }
+
+
+    /* .blog-container {
         width: 100%;
         z-index: 10;
         display: flex;
@@ -723,7 +812,7 @@
             text-decoration: underline;
         }
 
-    }
+    } */
 
     .music-container {
         width: 100%;
@@ -731,6 +820,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
 
         .music-content {
             flex: 1;
@@ -977,7 +1067,8 @@
         }
 
 
-        .blog-container {
+
+        /* .blog-container {
             h1 {
                 font: 600 2rem / 1.625rem "Open Sans", sans-serif;
                 color: var(--font-color);
@@ -1015,7 +1106,7 @@
                 font: 100 1.3rem / 1.625rem "Open Sans", sans-serif;
 
             }
-        }
+        } */
     }
 
 
@@ -1264,7 +1355,7 @@
                 </ul>
             </article>
 
-            <article class="blog-container">
+            <!-- <article class="blog-container">
 
                 <h1>Blog</h1>
 
@@ -1311,7 +1402,53 @@
                 </div>
 
             </article>
+             -->
 
+            <article class="blog-container">
+                <h2>
+                    Blog
+                </h2>
+                <section>
+                    <img src="default_blog_img.png" alt="">
+
+                    <div class="blog-detail">
+                        <h1>Blog Title</h1>
+                        <span>Jan 29, 25,</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odit, obcaecati autem
+                            corrupti velit a iste commodi. Porro, quaerat debitis possimus commodi ipsam ab rem maiores
+                            eius, nisi, molestiae tempore.</p>
+                        <button>Read More</button>
+                    </div>
+
+                </section>
+
+                <section>
+                    <img src="default_blog_img.png" alt="">
+
+                    <div class="blog-detail">
+                        <h1>Blog Title</h1>
+                        <span>Jan 29, 25,</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odit, obcaecati autem
+                            corrupti velit a iste commodi. Porro, quaerat debitis possimus commodi ipsam ab rem maiores
+                            eius, nisi, molestiae tempore.</p>
+                        <button>Read More</button>
+                    </div>
+
+                </section>
+                <section>
+                    <img src="default_blog_img.png" alt="">
+
+                    <div class="blog-detail">
+                        <h1>Blog Title</h1>
+                        <span>Jan 29, 25,</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odit, obcaecati autem
+                            corrupti velit a iste commodi. Porro, quaerat debitis possimus commodi ipsam ab rem maiores
+                            eius, nisi, molestiae tempore.</p>
+                        <button>Read More</button>
+                    </div>
+
+                </section>
+            </article>
             <article class="music-container" id="music-play">
                 <div class="music-content">
                     <h1>Stream the sound</h1>
